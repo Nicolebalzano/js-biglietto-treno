@@ -38,19 +38,19 @@ const etaPasseggero = parseInt(etaPasseggeroStr);
 console.log("Hai:" + " " + etaPasseggero + " " + "anni");
 
 //ELABORAZIONE LOGICA
-const prezzoBigliettoStr = kilometriDaPercorrere * 0.21;
+const prezzoBigliettoStr = kilometriDaPercorrere * 0.21.toFixed(2);
 const prezzoBiglietto = parseInt(prezzoBigliettoStr);
 
 const scontoMinorenni = (prezzoBiglietto / 100) * 20;
-const bigliettoMinorenni = prezzoBiglietto - scontoMinorenni;
+const bigliettoMinorenni = prezzoBiglietto - scontoMinorenni.toFixed(2);
 
 const scontoOver = (prezzoBiglietto / 100) * 40;
-const bigliettoOver = prezzoBiglietto - scontoOver;
+const bigliettoOver = prezzoBiglietto - scontoOver.toFixed(2);
 
  if (etaPasseggero < 18) {
-   console.log("Con lo sconto Minorenni applicato il tuo biglietto ora costa:" + " " + bigliettoMinorenni + "€");
+   console.log("Con lo sconto Minorenni (del 20% sul prezzo totale) il tuo biglietto ora costa:" + " " + bigliettoMinorenni + "€");
 } else if(etaPasseggero > 65) {
-    console.log("Con lo sconto Over 65 applicato il tuo biglietto ora costa:" + " " + bigliettoOver + "€");
+    console.log("Con lo sconto Over 65 (del 40% sul prezzo totale) il tuo biglietto ora costa:" + " " + bigliettoOver + "€");
 } else {
     console.log("Il tuo biglietto costa:" + " " + prezzoBiglietto + "€");
 }
